@@ -165,6 +165,39 @@ class _CategoriesPageState extends State<CategoriesPage> {
               textAlign: TextAlign.center,
             ),
           ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CharadesPage(liste: hercules)),
+              );
+            },
+            child: Text(
+              'Hercules (Mythology)',
+              style: TextStyle(
+                fontSize: d / 36,
+              ),
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CharadesPage(liste: aristochats)),
+              );
+            },
+            child: Text(
+              'Les Aristochats',
+              style: TextStyle(
+                fontSize: d / 36,
+              ),
+            ),
+          ),
+
         ],
       ),
     );
