@@ -35,11 +35,18 @@ class _CategoriesPageState extends State<CategoriesPage> {
   var d = sqrt(window.physicalSize.height * window.physicalSize.height +
       window.physicalSize.width * window.physicalSize.width);
   var counter = 120;
+  final _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.timer, size: d / 24, color: Colors.black),
+          onPressed: () => _scaffoldKey.currentState.openDrawer(),
+        ),
+        leadingWidth: d/20,
         title: Center(
           child: Text(
             'Charades',
@@ -47,17 +54,77 @@ class _CategoriesPageState extends State<CategoriesPage> {
             textAlign: TextAlign.center,
           ),
         ),
-        toolbarHeight: d / 20,
+        toolbarHeight: d / 18,
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+      drawer: Container(
+        color: Colors.red,
+        width: d / 4,
+        child: GridView.count(
+          crossAxisCount: 1,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          childAspectRatio: 4,
           children: <Widget>[
             DrawerHeader(
               child: ListTile(
-                title: Text('Timer', style: TextStyle(fontSize: d / 36)),
+                title: Text(
+                  'Timer',
+                  style: TextStyle(fontSize: d / 24),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            )
+            ),
+            Container(
+              color: Colors.blue,
+              child: Center(
+                child: RadioListTile(
+                  activeColor: Colors.red,
+                  title:
+                      Text('120 Secondes', style: TextStyle(fontSize: d / 36)),
+                  value: 120,
+                  groupValue: counter,
+                  onChanged: (value) {
+                    setState(() {
+                      counter = value;
+                    });
+                  },
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.blue,
+              child: Center(
+                child: RadioListTile(
+                  activeColor: Colors.red,
+                  title:
+                      Text('60 Secondes', style: TextStyle(fontSize: d / 36)),
+                  value: 60,
+                  groupValue: counter,
+                  onChanged: (value) {
+                    setState(() {
+                      counter = value;
+                    });
+                  },
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.blue,
+              child: Center(
+                child: RadioListTile(
+                  activeColor: Colors.red,
+                  title:
+                      Text('30 Secondes', style: TextStyle(fontSize: d / 36)),
+                  value: 30,
+                  groupValue: counter,
+                  onChanged: (value) {
+                    setState(() {
+                      counter = value;
+                    });
+                  },
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -270,7 +337,7 @@ class _CharadesPageState extends State<CharadesPage> {
         } else {
           timer.cancel();
           Alert(
-            title: '',
+            title: 'Score : $score',
             context: context,
             style: AlertStyle(
               animationType: AnimationType.grow,
@@ -278,11 +345,12 @@ class _CharadesPageState extends State<CharadesPage> {
               isCloseButton: false,
               isOverlayTapDismiss: false,
               backgroundColor: Colors.blue,
+              titleStyle: TextStyle(fontSize: d/24)
             ),
             buttons: [
               DialogButton(
                   height: d / 24,
-                  width: d / 3,
+                  width: d / 4,
                   child: Text(
                     'Retry',
                     style: TextStyle(fontSize: d / 36),
@@ -296,7 +364,20 @@ class _CharadesPageState extends State<CharadesPage> {
                       word = "Press X to begin";
                       Navigator.pop(context);
                     });
-                  })
+                  }),
+              DialogButton(
+                height: d / 24,
+                width: d / 4,
+                child: Text(
+                  'Home',
+                  style: TextStyle(fontSize: d / 36),
+                ),
+                color: colour,
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                },
+              )
             ],
             content: Container(
               height: d / 3,
@@ -312,6 +393,21 @@ class _CharadesPageState extends State<CharadesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.undo, size: d / 36, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+        leadingWidth: d/32,
+        shadowColor: colour,
+        title: Center(
+            child: Text('$counter',
+                style: TextStyle(fontSize: d / 24, color: Colors.black),
+                textAlign: TextAlign.center)),
+        backgroundColor: colour,
+        elevation: 1,
+        toolbarHeight: d / 20,
+      ),
       backgroundColor: Colors.blue,
       body: Row(
         children: <Widget>[
@@ -356,7 +452,6 @@ class _CharadesPageState extends State<CharadesPage> {
             child: Center(
               child: Column(
                 children: [
-                  Text('$counter', style: TextStyle(fontSize: d / 24)),
                   Expanded(
                       child: Center(
                     child: Text(
