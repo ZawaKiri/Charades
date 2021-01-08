@@ -34,13 +34,36 @@ class CategoriesPage extends StatefulWidget {
 class _CategoriesPageState extends State<CategoriesPage> {
   var d = sqrt(window.physicalSize.height * window.physicalSize.height +
       window.physicalSize.width * window.physicalSize.width);
+  var counter = 120;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(title: ,),
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            'Charades',
+            style: TextStyle(fontSize: d / 20, color: Colors.black),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        toolbarHeight: d / 20,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: ListTile(
+                title: Text('Timer', style: TextStyle(fontSize: d / 36)),
+              ),
+            )
+          ],
+        ),
+      ),
       backgroundColor: Colors.red,
       body: GridView.count(
+        padding: EdgeInsets.all(20),
         crossAxisCount: 4,
         mainAxisSpacing: 20,
         crossAxisSpacing: 20,
@@ -51,12 +74,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: hp)),
+                    builder: (context) =>
+                        CharadesPage(liste: hp, counter: counter)),
               );
             },
             child: Text(
               'Harry Potter',
               style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
           FlatButton(
@@ -65,12 +90,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: nct)),
+                    builder: (context) =>
+                        CharadesPage(liste: nct, counter: counter)),
               );
             },
             child: Text(
               'NCT',
               style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
           FlatButton(
@@ -79,7 +106,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: hpsorts)),
+                    builder: (context) =>
+                        CharadesPage(liste: hpsorts, counter: counter)),
               );
             },
             child: Text(
@@ -94,7 +122,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: vd)),
+                    builder: (context) =>
+                        CharadesPage(liste: vd, counter: counter)),
               );
             },
             child: Text(
@@ -109,12 +138,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: capitales)),
+                    builder: (context) =>
+                        CharadesPage(liste: capitales, counter: counter)),
               );
             },
             child: Text(
               'Capitales',
               style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
           FlatButton(
@@ -123,12 +154,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: countries)),
+                    builder: (context) =>
+                        CharadesPage(liste: countries, counter: counter)),
               );
             },
             child: Text(
               'Pays',
               style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
           FlatButton(
@@ -137,14 +170,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: disneyHV)),
+                    builder: (context) =>
+                        CharadesPage(liste: disneyHV, counter: counter)),
               );
             },
             child: Text(
               'Disney (Heroes & Villains)',
-              style: TextStyle(
-                fontSize: d / 36,
-              ),
+              style: TextStyle(fontSize: d / 36),
               textAlign: TextAlign.center,
             ),
           ),
@@ -154,14 +186,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: disneyMovies)),
+                    builder: (context) =>
+                        CharadesPage(liste: disneyMovies, counter: counter)),
               );
             },
             child: Text(
-              'Disney (Movies)',
-              style: TextStyle(
-                fontSize: d / 36,
-              ),
+              'Disney (Films)',
+              style: TextStyle(fontSize: d / 36),
               textAlign: TextAlign.center,
             ),
           ),
@@ -171,14 +202,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: hercules)),
+                    builder: (context) =>
+                        CharadesPage(liste: hercule, counter: counter)),
               );
             },
             child: Text(
-              'Hercules (Mythology)',
-              style: TextStyle(
-                fontSize: d / 36,
-              ),
+              'Hercule (Mythologie)',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
           FlatButton(
@@ -187,17 +218,16 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CharadesPage(liste: aristochats)),
+                    builder: (context) =>
+                        CharadesPage(liste: aristochats, counter: counter)),
               );
             },
             child: Text(
               'Les Aristochats',
-              style: TextStyle(
-                fontSize: d / 36,
-              ),
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
             ),
           ),
-
         ],
       ),
     );
@@ -206,24 +236,30 @@ class _CategoriesPageState extends State<CategoriesPage> {
 
 class CharadesPage extends StatefulWidget {
   final List<String> liste;
+  final int counter;
 
-  CharadesPage({Key key, @required this.liste}) : super(key: key);
+  CharadesPage({Key key, @required this.liste, @required this.counter})
+      : super(key: key);
 
-  State<CharadesPage> createState() => _CharadesPageState(list: liste);
+  State<CharadesPage> createState() =>
+      _CharadesPageState(list: liste, c: counter, counter: counter);
 }
 
 class _CharadesPageState extends State<CharadesPage> {
   var d = sqrt(window.physicalSize.height * window.physicalSize.height +
       window.physicalSize.width * window.physicalSize.width);
   final List<String> list;
+  int c;
+  int counter;
 
-  _CharadesPageState({@required this.list});
+  _CharadesPageState(
+      {@required this.list, @required this.c, @required this.counter});
 
   var colour = Colors.blue;
   var score = 0;
   var word = "Press X to begin";
-  var counter = 5;
   var timer = Timer(Duration(seconds: 0), null);
+
   List<Widget> words = [];
 
   void startTimer() {
@@ -255,7 +291,7 @@ class _CharadesPageState extends State<CharadesPage> {
                   onPressed: () {
                     setState(() {
                       score = 0;
-                      counter = 5;
+                      counter = c;
                       words = [];
                       word = "Press X to begin";
                       Navigator.pop(context);
@@ -360,7 +396,7 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.clear,
                             size: d / 24, color: Colors.black)));
-                  } else if (counter == 5) {
+                  } else if (counter == c) {
                     startTimer();
                     score = 0;
                     word = list[Random().nextInt(list.length)];
