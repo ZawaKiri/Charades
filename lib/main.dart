@@ -6,6 +6,7 @@ import 'dart:math';
 import 'dart:async';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'words.dart';
+import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,7 +47,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
           icon: Icon(Icons.timer, size: d / 24, color: Colors.black),
           onPressed: () => _scaffoldKey.currentState.openDrawer(),
         ),
-        leadingWidth: d/20,
+        leadingWidth: d / 20,
         title: Center(
           child: Text(
             'Charades',
@@ -295,6 +296,103 @@ class _CategoriesPageState extends State<CategoriesPage> {
               textAlign: TextAlign.center,
             ),
           ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: nouns, counter: counter)),
+              );
+            },
+            child: Text(
+              'Nouns',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: adjectives, counter: counter)),
+              );
+            },
+            child: Text(
+              'Adjectives',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: all, counter: counter)),
+              );
+            },
+            child: Text(
+              'Words',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: orelsan, counter: counter)),
+              );
+            },
+            child: Text(
+              'Orel/Gringe/Casseurs Flowters',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: beatles, counter: counter)),
+              );
+            },
+            child: Text(
+              'Beatles',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        CharadesPage(liste: ptitbac, counter: counter)),
+              );
+            },
+            child: Text(
+              'P\'tit Bac',
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          ),
+
         ],
       ),
     );
@@ -340,13 +438,12 @@ class _CharadesPageState extends State<CharadesPage> {
             title: 'Score : $score',
             context: context,
             style: AlertStyle(
-              animationType: AnimationType.grow,
-              animationDuration: Duration(seconds: 1),
-              isCloseButton: false,
-              isOverlayTapDismiss: false,
-              backgroundColor: Colors.blue,
-              titleStyle: TextStyle(fontSize: d/24)
-            ),
+                animationType: AnimationType.grow,
+                animationDuration: Duration(seconds: 1),
+                isCloseButton: false,
+                isOverlayTapDismiss: false,
+                backgroundColor: Colors.blue,
+                titleStyle: TextStyle(fontSize: d / 24)),
             buttons: [
               DialogButton(
                   height: d / 24,
@@ -398,7 +495,7 @@ class _CharadesPageState extends State<CharadesPage> {
           icon: Icon(Icons.undo, size: d / 36, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
-        leadingWidth: d/32,
+        leadingWidth: d / 32,
         shadowColor: colour,
         title: Center(
             child: Text('$counter',
@@ -428,7 +525,6 @@ class _CharadesPageState extends State<CharadesPage> {
                 setState(() {
                   colour = Colors.green;
                   if (timer.isActive) {
-                    word = list[Random().nextInt(list.length)];
                     score++;
                     words.add(ListTile(
                         title: Text(
@@ -436,11 +532,9 @@ class _CharadesPageState extends State<CharadesPage> {
                           style:
                               TextStyle(fontSize: d / 24, color: Colors.green),
                         ),
-                        leading: Icon(
-                          Icons.check,
-                          size: d / 24,
-                          color: Colors.black,
-                        )));
+                        leading: Icon(Icons.check,
+                            size: d / 24, color: Colors.black)));
+                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
                   }
                 });
               },
@@ -483,7 +577,6 @@ class _CharadesPageState extends State<CharadesPage> {
                 setState(() {
                   colour = Colors.red;
                   if (timer.isActive) {
-                    word = list[Random().nextInt(list.length)];
                     words.add(ListTile(
                         title: Text(
                           word,
@@ -491,10 +584,11 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.clear,
                             size: d / 24, color: Colors.black)));
+                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
                   } else if (counter == c) {
                     startTimer();
                     score = 0;
-                    word = list[Random().nextInt(list.length)];
+                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
                   }
                 });
               },
