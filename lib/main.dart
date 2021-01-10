@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'dart:math';
 import 'dart:async';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'words.dart';
+import 'lists.dart';
 import 'package:english_words/english_words.dart';
 
 void main() {
@@ -130,270 +130,32 @@ class _CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       backgroundColor: Colors.red,
-      body: GridView.count(
+      body: GridView.builder(
         padding: EdgeInsets.all(20),
-        crossAxisCount: 4,
-        mainAxisSpacing: 20,
-        crossAxisSpacing: 20,
-        children: [
-          FlatButton(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+        ),
+        itemCount: lilist.length,
+        itemBuilder: (BuildContext context, int index) {
+          return new FlatButton(
             color: Colors.blue,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
-                        CharadesPage(liste: hp, counter: counter)),
+                        CharadesPage(liste: lilist[index], counter: counter)),
               );
             },
             child: Text(
-              'Harry Potter',
+              liliste[index],
               style: TextStyle(fontSize: d / 36),
               textAlign: TextAlign.center,
             ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: nct, counter: counter)),
-              );
-            },
-            child: Text(
-              'NCT',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: hpsorts, counter: counter)),
-              );
-            },
-            child: Text(
-              'Harry Potter (sorts)',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: vd, counter: counter)),
-              );
-            },
-            child: Text(
-              'Vampire Diaries',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: capitales, counter: counter)),
-              );
-            },
-            child: Text(
-              'Capitales',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: countries, counter: counter)),
-              );
-            },
-            child: Text(
-              'Pays',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: disneyHV, counter: counter)),
-              );
-            },
-            child: Text(
-              'Disney (Heroes & Villains)',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: disneyMovies, counter: counter)),
-              );
-            },
-            child: Text(
-              'Disney (Films)',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: hercule, counter: counter)),
-              );
-            },
-            child: Text(
-              'Hercule (Mythologie)',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: aristochats, counter: counter)),
-              );
-            },
-            child: Text(
-              'Les Aristochats',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: nouns, counter: counter)),
-              );
-            },
-            child: Text(
-              'Nouns',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: adjectives, counter: counter)),
-              );
-            },
-            child: Text(
-              'Adjectives',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: all, counter: counter)),
-              );
-            },
-            child: Text(
-              'Words',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: orelsan, counter: counter)),
-              );
-            },
-            child: Text(
-              'Orel/Gringe/Casseurs Flowters',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: beatles, counter: counter)),
-              );
-            },
-            child: Text(
-              'Beatles',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: ptitbac, counter: counter)),
-              );
-            },
-            child: Text(
-              'P\'tit Bac',
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          ),
-
-        ],
+          );
+        },
       ),
     );
   }
@@ -534,7 +296,11 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.check,
                             size: d / 24, color: Colors.black)));
-                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
+                    word = list[Random().nextInt(list.length)] +
+                        (list == ptitbac
+                            ? '\nen ' +
+                                alphabet[Random().nextInt(alphabet.length)]
+                            : '');
                   }
                 });
               },
@@ -550,7 +316,7 @@ class _CharadesPageState extends State<CharadesPage> {
                       child: Center(
                     child: Text(
                       word,
-                      style: TextStyle(fontSize: d / 12),
+                      style: TextStyle(fontSize: d / 16),
                       textAlign: TextAlign.center,
                     ),
                   )),
@@ -584,11 +350,19 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.clear,
                             size: d / 24, color: Colors.black)));
-                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
+                    word = list[Random().nextInt(list.length)] +
+                        (list == ptitbac
+                            ? '\nen ' +
+                                alphabet[Random().nextInt(alphabet.length)]
+                            : '');
                   } else if (counter == c) {
                     startTimer();
                     score = 0;
-                    word = list[Random().nextInt(list.length)] + (list == ptitbac ? '\nen ' + alphabet[Random().nextInt(alphabet.length)] : '');
+                    word = list[Random().nextInt(list.length)] +
+                        (list == ptitbac
+                            ? '\nen ' +
+                                alphabet[Random().nextInt(alphabet.length)]
+                            : '');
                   }
                 });
               },
