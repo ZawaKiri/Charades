@@ -6,14 +6,12 @@ import 'dart:math';
 import 'dart:async';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'lists.dart';
-import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations(
