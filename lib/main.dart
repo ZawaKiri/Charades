@@ -14,8 +14,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -31,13 +29,14 @@ class CategoriesPage extends StatefulWidget {
 }
 
 class _CategoriesPageState extends State<CategoriesPage> {
-  var d = sqrt(window.physicalSize.height * window.physicalSize.height +
-      window.physicalSize.width * window.physicalSize.width);
   var counter = 120;
   final _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
+    var d = sqrt(MediaQuery.of(context).size.height *
+            MediaQuery.of(context).size.height +
+        MediaQuery.of(context).size.width * MediaQuery.of(context).size.width);
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -128,33 +127,36 @@ class _CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       backgroundColor: Colors.red,
-      body: GridView.builder(
-        padding: EdgeInsets.all(20),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-        ),
-        itemCount: lilist.length,
-        itemBuilder: (BuildContext context, int index) {
-          return new FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        CharadesPage(liste: lilist[index], counter: counter)),
-              );
-            },
-            child: Text(
-              liliste[index],
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          );
-        },
-      ),
+      body: OrientationBuilder(builder: (context, orientation) {
+        return GridView.builder(
+          padding: EdgeInsets.all(20),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount:
+                orientation == Orientation.portrait ? 2 : 4,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+          ),
+          itemCount: lilist.length,
+          itemBuilder: (BuildContext context, int index) {
+            return new FlatButton(
+              color: Colors.blue,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CharadesPage(
+                          liste: lilist[index], counter: counter, d: d)),
+                );
+              },
+              child: Text(
+                liliste[index],
+                style: TextStyle(fontSize: d / 36),
+                textAlign: TextAlign.center,
+              ),
+            );
+          },
+        );
+      }),
     );
   }
 }
@@ -162,23 +164,27 @@ class _CategoriesPageState extends State<CategoriesPage> {
 class CharadesPage extends StatefulWidget {
   final List<String> liste;
   final int counter;
+  final double d;
 
-  CharadesPage({Key key, @required this.liste, @required this.counter})
+  CharadesPage(
+      {Key key, @required this.liste, @required this.counter, @required this.d})
       : super(key: key);
 
   State<CharadesPage> createState() =>
-      _CharadesPageState(list: liste, c: counter, counter: counter);
+      _CharadesPageState(list: liste, c: counter, counter: counter, d: d);
 }
 
 class _CharadesPageState extends State<CharadesPage> {
-  var d = sqrt(window.physicalSize.height * window.physicalSize.height +
-      window.physicalSize.width * window.physicalSize.width);
   final List<String> list;
   int c;
   int counter;
+  double d;
 
   _CharadesPageState(
-      {@required this.list, @required this.c, @required this.counter});
+      {@required this.list,
+      @required this.c,
+      @required this.counter,
+      @required this.d});
 
   var colour = Colors.blue;
   var score = 0;
@@ -237,7 +243,7 @@ class _CharadesPageState extends State<CharadesPage> {
               )
             ],
             content: Container(
-              height: d / 3,
+              height: d / 4,
               width: d / 2,
               child: ListView(children: words),
             ),
