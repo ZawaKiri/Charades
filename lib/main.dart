@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'dart:ui';
 import 'dart:math';
 import 'dart:async';
@@ -131,8 +130,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         return GridView.builder(
           padding: EdgeInsets.all(20),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount:
-                orientation == Orientation.portrait ? 2 : 4,
+            crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,
           ),
