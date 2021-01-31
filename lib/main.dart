@@ -190,10 +190,12 @@ class _CharadesPageState extends State<CharadesPage> {
   var score = 0;
   var word = "Press X to begin";
   var timer = Timer(Duration(seconds: 0), null);
+  List<String> l;
 
   List<Widget> words = [];
 
   void startTimer() {
+    if (l == null) l = [...list];
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         if (counter > 0) {
@@ -306,11 +308,13 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.check,
                             size: d / 24, color: Colors.black)));
-                    word = list[Random().nextInt(list.length)] +
+                    word = l[Random().nextInt(l.length)] +
                         (list == ptitbac
                             ? '\nen ' +
-                                alphabet[Random().nextInt(alphabet.length)]
+                            alphabet[Random().nextInt(alphabet.length)]
                             : '');
+                    l.remove(word);
+                    if (l.length == 0) l = [...list];
                   }
                 });
               },
@@ -361,19 +365,22 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.clear,
                             size: d / 24, color: Colors.black)));
-                    word = list[Random().nextInt(list.length)] +
+                    word = l[Random().nextInt(l.length)] +
                         (list == ptitbac
                             ? '\nen ' +
                                 alphabet[Random().nextInt(alphabet.length)]
                             : '');
+                    l.remove(word);
+                    if (l.length == 0) l = [...list];
                   } else if (counter == c) {
                     startTimer();
                     score = 0;
-                    word = list[Random().nextInt(list.length)] +
+                    word = l[Random().nextInt(l.length)] +
                         (list == ptitbac
                             ? '\nen ' +
                                 alphabet[Random().nextInt(alphabet.length)]
                             : '');
+                    l.remove(word);
                   }
                 });
               },

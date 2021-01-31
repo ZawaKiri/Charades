@@ -799,7 +799,14 @@ List<String> nct = [
   'Resonance Part. 1',
 ];
 
-List<String> vd = [];
+List<String> vd = [
+  'Elena Gilbert',
+  'Stefan Salvatore',
+  'Damon Salvatore',
+  'Bonnie Bennett',
+  'Niklaus Mikaelson',
+  'Caroline Forbes',
+];
 
 List<String> capitales = [
   'Tokyo',
