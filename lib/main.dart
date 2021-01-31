@@ -276,11 +276,13 @@ class _CharadesPageState extends State<CharadesPage> {
         toolbarHeight: d / 20,
       ),
       backgroundColor: Colors.blue,
-      body: Row(
+      body: Flex(
+        direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.horizontal : Axis.vertical,
         children: <Widget>[
           Expanded(
             child: FlatButton(
-              child: Column(
+              child: Flex(
+                direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.vertical : Axis.horizontal,
                 children: [
                   Expanded(
                     child: Icon(
@@ -336,7 +338,8 @@ class _CharadesPageState extends State<CharadesPage> {
           Expanded(
             child: FlatButton(
               color: colour,
-              child: Column(
+              child: Flex(
+                direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.vertical : Axis.horizontal,
                 children: [
                   Expanded(
                     child: Icon(
