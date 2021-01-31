@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Charades',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: CategoriesPage(),
@@ -126,35 +127,36 @@ class _CategoriesPageState extends State<CategoriesPage> {
         ),
       ),
       backgroundColor: Colors.red,
-      body: OrientationBuilder(builder: (context, orientation) {
-        return GridView.builder(
-          padding: EdgeInsets.all(20),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-          ),
-          itemCount: lilist.length,
-          itemBuilder: (BuildContext context, int index) {
-            return new FlatButton(
-              color: Colors.blue,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => CharadesPage(
-                          liste: lilist[index], counter: counter, d: d)),
-                );
-              },
-              child: Text(
-                liliste[index],
-                style: TextStyle(fontSize: d / 36),
-                textAlign: TextAlign.center,
-              ),
-            );
-          },
-        );
-      }),
+      body: GridView.builder(
+        padding: EdgeInsets.all(20),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount:
+              MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 2
+                  : 4,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+        ),
+        itemCount: liliste.length,
+        itemBuilder: (BuildContext context, int index) {
+          return new FlatButton(
+            color: Colors.blue,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CharadesPage(
+                        liste: lilist[index], counter: counter, d: d)),
+              );
+            },
+            child: Text(
+              liliste[index],
+              style: TextStyle(fontSize: d / 36),
+              textAlign: TextAlign.center,
+            ),
+          );
+        },
+      ),
     );
   }
 }
@@ -198,6 +200,10 @@ class _CharadesPageState extends State<CharadesPage> {
           counter--;
         } else {
           timer.cancel();
+          words.add(ListTile(
+              title: Text(word,
+                  style: TextStyle(fontSize: d / 24, color: Colors.red)),
+              leading: Icon(Icons.check, size: d / 24, color: Colors.black)));
           Alert(
             title: 'Score : $score',
             context: context,
