@@ -37,126 +37,153 @@ class _CategoriesPageState extends State<CategoriesPage> {
     var d = sqrt(MediaQuery.of(context).size.height *
             MediaQuery.of(context).size.height +
         MediaQuery.of(context).size.width * MediaQuery.of(context).size.width);
-    return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.timer, size: d / 24, color: Colors.black),
-          onPressed: () => _scaffoldKey.currentState.openDrawer(),
-        ),
-        leadingWidth: d / 20,
-        title: Center(
-          child: Text(
-            'Charades',
-            style: TextStyle(fontSize: d / 20, color: Colors.black),
-            textAlign: TextAlign.center,
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+          key: _scaffoldKey,
+          appBar: AppBar(
+            bottom: TabBar(tabs: [
+              Tab(
+                  child: Text(
+                'Tout',
+                style: TextStyle(fontSize: d / 48, color: Colors.black),
+              )),
+              Tab(
+                  icon: Icon(Icons.music_note,
+                      size: d / 48, color: Colors.black)),
+              Tab(
+                  icon: Icon(Icons.movie_filter_outlined,
+                      size: d / 48, color: Colors.black)),
+              Tab(
+                  child: Text(
+                'Mots',
+                style: TextStyle(fontSize: d / 48, color: Colors.black),
+              )),
+              Tab(icon: Icon(Icons.place, size: d / 48, color: Colors.black))
+            ]),
+            leading: IconButton(
+              icon: Icon(Icons.timer, size: d / 24, color: Colors.black),
+              onPressed: () => _scaffoldKey.currentState.openDrawer(),
+            ),
+            leadingWidth: d / 20,
+            title: Center(
+              child: Text(
+                'Charades',
+                style: TextStyle(fontSize: d / 20, color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            toolbarHeight: d / 12,
           ),
-        ),
-        toolbarHeight: d / 18,
-      ),
-      drawer: Container(
-        color: Colors.red,
-        width: d / 4,
-        child: GridView.count(
-          crossAxisCount: 1,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-          childAspectRatio: 4,
-          children: <Widget>[
-            DrawerHeader(
-              child: ListTile(
-                title: Text(
-                  'Timer',
-                  style: TextStyle(fontSize: d / 24),
-                  textAlign: TextAlign.center,
+          drawer: Container(
+            color: Colors.red,
+            width: d / 4,
+            child: GridView.count(
+              crossAxisCount: 1,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio: 4,
+              children: <Widget>[
+                DrawerHeader(
+                  child: ListTile(
+                    title: Text(
+                      'Timer',
+                      style: TextStyle(fontSize: d / 24),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: RadioListTile(
+                      activeColor: Colors.red,
+                      title: Text('120 Secondes',
+                          style: TextStyle(fontSize: d / 36)),
+                      value: 120,
+                      groupValue: counter,
+                      onChanged: (value) {
+                        setState(() {
+                          counter = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: RadioListTile(
+                      activeColor: Colors.red,
+                      title: Text('60 Secondes',
+                          style: TextStyle(fontSize: d / 36)),
+                      value: 60,
+                      groupValue: counter,
+                      onChanged: (value) {
+                        setState(() {
+                          counter = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: Center(
+                    child: RadioListTile(
+                      activeColor: Colors.red,
+                      title: Text('30 Secondes',
+                          style: TextStyle(fontSize: d / 36)),
+                      value: 30,
+                      groupValue: counter,
+                      onChanged: (value) {
+                        setState(() {
+                          counter = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Container(
-              color: Colors.blue,
-              child: Center(
-                child: RadioListTile(
-                  activeColor: Colors.red,
-                  title:
-                      Text('120 Secondes', style: TextStyle(fontSize: d / 36)),
-                  value: 120,
-                  groupValue: counter,
-                  onChanged: (value) {
-                    setState(() {
-                      counter = value;
-                    });
+          ),
+          backgroundColor: Colors.red,
+          body: TabBarView(
+              children: List.generate(
+            lililist.length,
+            (indexxx) => GridView.builder(
+              padding: EdgeInsets.all(20),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount:
+                    MediaQuery.of(context).orientation == Orientation.portrait
+                        ? 2
+                        : 4,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+              ),
+              itemCount: lililist[indexxx].length,
+              itemBuilder: (BuildContext context, int index) {
+                return new FlatButton(
+                  color: Colors.blue,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CharadesPage(
+                              liste: lililist[indexxx][index],
+                              counter: counter,
+                              d: d)),
+                    );
                   },
-                ),
-              ),
+                  child: Text(
+                    lililiste[indexxx][index],
+                    style: TextStyle(fontSize: d / 36),
+                    textAlign: TextAlign.center,
+                  ),
+                );
+              },
             ),
-            Container(
-              color: Colors.blue,
-              child: Center(
-                child: RadioListTile(
-                  activeColor: Colors.red,
-                  title:
-                      Text('60 Secondes', style: TextStyle(fontSize: d / 36)),
-                  value: 60,
-                  groupValue: counter,
-                  onChanged: (value) {
-                    setState(() {
-                      counter = value;
-                    });
-                  },
-                ),
-              ),
-            ),
-            Container(
-              color: Colors.blue,
-              child: Center(
-                child: RadioListTile(
-                  activeColor: Colors.red,
-                  title:
-                      Text('30 Secondes', style: TextStyle(fontSize: d / 36)),
-                  value: 30,
-                  groupValue: counter,
-                  onChanged: (value) {
-                    setState(() {
-                      counter = value;
-                    });
-                  },
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      backgroundColor: Colors.red,
-      body: GridView.builder(
-        padding: EdgeInsets.all(20),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount:
-              MediaQuery.of(context).orientation == Orientation.portrait
-                  ? 2
-                  : 4,
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-        ),
-        itemCount: liliste.length,
-        itemBuilder: (BuildContext context, int index) {
-          return new FlatButton(
-            color: Colors.blue,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CharadesPage(
-                        liste: lilist[index], counter: counter, d: d)),
-              );
-            },
-            child: Text(
-              liliste[index],
-              style: TextStyle(fontSize: d / 36),
-              textAlign: TextAlign.center,
-            ),
-          );
-        },
-      ),
+          ))),
     );
   }
 }
@@ -279,12 +306,17 @@ class _CharadesPageState extends State<CharadesPage> {
       ),
       backgroundColor: Colors.blue,
       body: Flex(
-        direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.horizontal : Axis.vertical,
+        direction: MediaQuery.of(context).orientation == Orientation.landscape
+            ? Axis.horizontal
+            : Axis.vertical,
         children: <Widget>[
           Expanded(
             child: FlatButton(
               child: Flex(
-                direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.vertical : Axis.horizontal,
+                direction:
+                    MediaQuery.of(context).orientation == Orientation.landscape
+                        ? Axis.vertical
+                        : Axis.horizontal,
                 children: [
                   Expanded(
                     child: Icon(
@@ -308,11 +340,7 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.check,
                             size: d / 24, color: Colors.black)));
-                    word = l[Random().nextInt(l.length)] +
-                        (list == ptitbac
-                            ? '\nen ' +
-                            alphabet[Random().nextInt(alphabet.length)]
-                            : '');
+                    word = l[Random().nextInt(l.length)];
                     l.remove(word);
                     if (l.length == 0) l = [...list];
                   }
@@ -343,7 +371,10 @@ class _CharadesPageState extends State<CharadesPage> {
             child: FlatButton(
               color: colour,
               child: Flex(
-                direction: MediaQuery.of(context).orientation == Orientation.landscape ? Axis.vertical : Axis.horizontal,
+                direction:
+                    MediaQuery.of(context).orientation == Orientation.landscape
+                        ? Axis.vertical
+                        : Axis.horizontal,
                 children: [
                   Expanded(
                     child: Icon(
@@ -365,11 +396,7 @@ class _CharadesPageState extends State<CharadesPage> {
                         ),
                         leading: Icon(Icons.clear,
                             size: d / 24, color: Colors.black)));
-                    word = l[Random().nextInt(l.length)] +
-                        (list == ptitbac
-                            ? '\nen ' +
-                                alphabet[Random().nextInt(alphabet.length)]
-                            : '');
+                    word = l[Random().nextInt(l.length)];
                     l.remove(word);
                     if (l.length == 0) l = [...list];
                   } else if (counter == c) {
