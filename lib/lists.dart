@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:flutter_app/anime.dart';
 import 'package:flutter_app/classic_rock.dart';
 import 'package:flutter_app/mots.dart';
 
@@ -130,6 +131,7 @@ List<List<String>> lilist = [
   hpsorts,
   nct,
   vd,
+  anime,
   countries,
   capitales,
   disneyHV,
@@ -164,6 +166,7 @@ List<String> liliste = [
   'Harry Potter (sorts)',
   'NCT',
   'Vampire Diaries',
+  'Anime',
   'Pays',
   'Capitales',
   'Disney (Héros et Méchants)',
