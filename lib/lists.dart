@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter_app/anime.dart';
 import 'package:flutter_app/classic_rock.dart';
+import 'package:flutter_app/expressions.dart';
 import 'package:flutter_app/mots.dart';
 
 var lililist = [
@@ -74,6 +75,7 @@ List<List<String>> mot = [
   all,
   mimes,
   mots,
+  loc,
   rmot,
 ];
 
@@ -83,6 +85,7 @@ List<String> momot = [
   'Words',
   'Mimes',
   'Mots',
+  'Locutions latines'
   'Mot au hasard',
 ];
 
@@ -163,6 +166,7 @@ List<List<String>> lilist = [
   rer,
   transilien,
   tram,
+  loc,
 ];
 
 List<String> liliste = [
@@ -199,7 +203,10 @@ List<String> liliste = [
   'Stations de RER',
   'Stations de Transilien',
   'Stations de tramway',
+  'Locutions latines'
 ];
+
+List<String> se = [''];
 
 List<String> vfra = [
 'Paris',
@@ -5357,4 +5364,5 @@ List<String> rand = [
   ...transilien,
   ...tram,
   ...vfra,
+  ...loc,
 ];
