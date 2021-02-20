@@ -354,10 +354,13 @@ class _CharadesPageState extends State<CharadesPage> {
                 children: [
                   Expanded(
                       child: Center(
-                    child: Text(
-                      word,
-                      style: TextStyle(fontSize: d / 16),
-                      textAlign: TextAlign.center,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Text(
+                        word,
+                        style: TextStyle(fontSize: d / 16),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   )),
                   Text('$score', style: TextStyle(fontSize: d / 24)),
