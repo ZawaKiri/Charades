@@ -85,7 +85,7 @@ List<String> momot = [
   'Words',
   'Mimes',
   'Mots',
-  'Locutions latines'
+  'Locutions latines',
   'Mot au hasard',
 ];
 
@@ -203,7 +203,7 @@ List<String> liliste = [
   'Stations de RER',
   'Stations de Transilien',
   'Stations de tramway',
-  'Locutions latines'
+  'Locutions latines',
 ];
 
 List<String> se = [''];

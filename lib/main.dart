@@ -73,7 +73,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 textAlign: TextAlign.center,
               ),
             ),
-            toolbarHeight: d / 12,
+            toolbarHeight: d / 8,
           ),
           drawer: Container(
             color: Colors.red,
@@ -84,13 +84,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
               crossAxisSpacing: 10,
               childAspectRatio: 4,
               children: <Widget>[
-                DrawerHeader(
-                  child: ListTile(
-                    title: Text(
-                      'Timer',
-                      style: TextStyle(fontSize: d / 24),
-                      textAlign: TextAlign.center,
-                    ),
+                ListTile(
+                  title: Text(
+                    'Timer',
+                    style: TextStyle(fontSize: d / 24),
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 Container(
@@ -98,7 +96,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('120 Secondes',
+                      title: Text('120 sec',
                           style: TextStyle(fontSize: d / 36)),
                       value: 120,
                       groupValue: counter,
@@ -115,7 +113,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('60 Secondes',
+                      title: Text('60 sec',
                           style: TextStyle(fontSize: d / 36)),
                       value: 60,
                       groupValue: counter,
@@ -132,7 +130,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('30 Secondes',
+                      title: Text('30 sec',
                           style: TextStyle(fontSize: d / 36)),
                       value: 30,
                       groupValue: counter,
@@ -276,8 +274,8 @@ class _CharadesPageState extends State<CharadesPage> {
               )
             ],
             content: Container(
-              height: d / 4,
-              width: d / 2,
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 0.75,
               child: ListView(children: words),
             ),
           ).show();
