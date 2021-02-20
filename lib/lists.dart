@@ -4,6 +4,7 @@ import 'package:flutter_app/classic_rock.dart';
 import 'package:flutter_app/expressions.dart';
 import 'package:flutter_app/logo.dart';
 import 'package:flutter_app/mots.dart';
+import 'package:flutter_app/wikihow.dart';
 
 var lililist = [
   lilist,
@@ -78,6 +79,7 @@ List<List<String>> mot = [
   mots,
   logo,
   loc,
+  wikihow,
   rmot,
 ];
 
@@ -87,8 +89,9 @@ List<String> momot = [
   'Words',
   'Mimes',
   'Mots',
-  'Marque',
+  'Marques',
   'Locutions latines',
+  'Wikihow',
   'Mot au hasard',
 ];
 
@@ -171,6 +174,7 @@ List<List<String>> lilist = [
   transilien,
   tram,
   loc,
+  wikihow,
 ];
 
 List<String> liliste = [
@@ -204,11 +208,12 @@ List<String> liliste = [
   'Bande Organisée',
   'Random',
   'Mots',
-  'Marque',
+  'Marques',
   'Stations de RER',
   'Stations de Transilien',
   'Stations de tramway',
   'Locutions latines',
+  'Wikihow',
 ];
 
 List<String> se = [''];
