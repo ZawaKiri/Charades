@@ -4,6 +4,7 @@ import 'package:flutter_app/classic_rock.dart';
 import 'package:flutter_app/expressions.dart';
 import 'package:flutter_app/logo.dart';
 import 'package:flutter_app/mots.dart';
+import 'package:flutter_app/rues.dart';
 import 'package:flutter_app/wikihow.dart';
 
 var lililist = [
@@ -110,6 +111,7 @@ List<List<String>> places = [
   transilien,
   tram,
   vfra,
+  rues,
   rplaces,
 ];
 
@@ -123,6 +125,7 @@ List<String> plaplaces = [
   'Stations de Transilien',
   'Stations de tramway',
   'Communes',
+  'Rues de Paris',
   'Place au hasard',
 ];
 
@@ -135,7 +138,8 @@ var rplaces = [
   ...rer,
   ...transilien,
   ...tram,
-  ...vfra
+  ...vfra,
+  ...rues,
 ];
 
 List<List<String>> lilist = [
@@ -159,6 +163,7 @@ List<List<String>> lilist = [
   ptitbac,
   departements,
   vfra,
+  rues,
   usStates,
   math,
   fonctions,
@@ -198,6 +203,7 @@ List<String> liliste = [
   'P\'tit Bac',
   'Départements',
   'Communes',
+  'Rues de Paris',
   'US States',
   'Maths',
   'Fonctions',
@@ -6184,5 +6190,6 @@ List<String> rand = [
   ...transilien,
   ...tram,
   ...vfra,
+  ...rues,
   ...loc,
 ];
