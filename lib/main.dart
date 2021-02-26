@@ -38,11 +38,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
             MediaQuery.of(context).size.height +
         MediaQuery.of(context).size.width * MediaQuery.of(context).size.width);
     return DefaultTabController(
-      length: 5,
+      length: 6,
       child: Scaffold(
           key: _scaffoldKey,
           appBar: AppBar(
-            bottom: TabBar(tabs: [
+            bottom: TabBar(isScrollable: true, tabs: [
               Tab(
                   child: Text(
                 'Tout',
@@ -59,7 +59,13 @@ class _CategoriesPageState extends State<CategoriesPage> {
                 'Mots',
                 style: TextStyle(fontSize: d / 48, color: Colors.black),
               )),
-              Tab(icon: Icon(Icons.place, size: d / 48, color: Colors.black))
+              Tab(icon: Icon(Icons.place, size: d / 48, color: Colors.black)),
+              Tab(
+                  child: Text(
+                    'Lyrics',
+                    style: TextStyle(fontSize: d / 48, color: Colors.black),
+                  )),
+
             ]),
             leading: IconButton(
               icon: Icon(Icons.timer, size: d / 24, color: Colors.black),
@@ -96,8 +102,8 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('120 sec',
-                          style: TextStyle(fontSize: d / 36)),
+                      title:
+                          Text('120 sec', style: TextStyle(fontSize: d / 36)),
                       value: 120,
                       groupValue: counter,
                       onChanged: (value) {
@@ -113,8 +119,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('60 sec',
-                          style: TextStyle(fontSize: d / 36)),
+                      title: Text('60 sec', style: TextStyle(fontSize: d / 36)),
                       value: 60,
                       groupValue: counter,
                       onChanged: (value) {
@@ -130,8 +135,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   child: Center(
                     child: RadioListTile(
                       activeColor: Colors.red,
-                      title: Text('30 sec',
-                          style: TextStyle(fontSize: d / 36)),
+                      title: Text('30 sec', style: TextStyle(fontSize: d / 36)),
                       value: 30,
                       groupValue: counter,
                       onChanged: (value) {
