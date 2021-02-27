@@ -1,4 +1,4 @@
-#Fri Feb 26 22:32:43 CET 2021
+#Sat Feb 27 12:35:15 CET 2021
 base.0=/home/anamsaidie/AndroidStudioProjects/flutter_app/build/app/intermediates/transforms/r8/release/0/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
