@@ -8,6 +8,7 @@ MERGED from [:integration_test] /home/anamsaidie/AndroidStudioProjects/flutter_a
 MERGED from [androidx.test:rules:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/737a6203092b5c17d2fabf58a21b0e37/rules-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/1178df15b99bcc2fbf04bc1a29c72d23/espresso-core-3.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.test:runner:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/17c732fe256a09255210acc7f771fec2/runner-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/615cab8ad6393a9c868d48761bbea666/activity-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/28d99d5113324aa067757f8ca41a426f/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -18,7 +19,6 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/anamsaidie/.gradl
 MERGED from [androidx.savedstate:savedstate:1.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/54d8b8735f730e83f07925f758092af3/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/23edc849475fdda61367cb003f9b9f93/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/79f9d65ef8b1c716310f666473a689a7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/077300052aa327ee6fc9bbb0ce309b24/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/3a7eb299570065a3866b140e1a95969b/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/b80fad55c42c418cc210e235056767fb/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
@@ -108,6 +108,8 @@ MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/anamsaidie/.gradl
 MERGED from [androidx.test.espresso:espresso-core:3.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/1178df15b99bcc2fbf04bc1a29c72d23/espresso-core-3.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.test:runner:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/17c732fe256a09255210acc7f771fec2/runner-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.test:runner:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/17c732fe256a09255210acc7f771fec2/runner-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/0986d0d74b8a2c7da8161f6370fc7744/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/615cab8ad6393a9c868d48761bbea666/activity-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -128,8 +130,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/anamsaidie/.grad
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/23edc849475fdda61367cb003f9b9f93/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/79f9d65ef8b1c716310f666473a689a7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/79f9d65ef8b1c716310f666473a689a7/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.test:monitor:1.2.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/846046699b881ed4e82eabd39298ff36/monitor-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/077300052aa327ee6fc9bbb0ce309b24/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/077300052aa327ee6fc9bbb0ce309b24/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/anamsaidie/.gradle/caches/transforms-2/files-2.1/3a7eb299570065a3866b140e1a95969b/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
