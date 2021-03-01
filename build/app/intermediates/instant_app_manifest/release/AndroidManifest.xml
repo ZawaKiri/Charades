@@ -3,7 +3,7 @@
     package="com.example.flutter_app"
     android:targetSandboxVersion="2"
     android:versionCode="1"
-    android:versionName="1.1.1" >
+    android:versionName="1.1.2" >
 
     <uses-sdk
         android:minSdkVersion="16"

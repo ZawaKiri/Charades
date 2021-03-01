@@ -4,6 +4,7 @@ import 'package:flutter_app/classic_rock.dart';
 import 'package:flutter_app/colonel.dart';
 import 'package:flutter_app/disney.dart';
 import 'package:flutter_app/expressions.dart';
+import 'package:flutter_app/fairy.dart';
 import 'package:flutter_app/logo.dart';
 import 'package:flutter_app/marseille.dart';
 import 'package:flutter_app/mots.dart';
@@ -95,6 +96,7 @@ List<List<String>> movies = [
   hpsorts,
   vd,
   naruto,
+  ft,
   disneyHV,
   disneyMovies,
   hercule,
@@ -106,6 +108,7 @@ List<String> momovies = [
   'Harry Potter (sorts)',
   'Vampire Diaries (Persos)',
   'Naruto',
+  'Fairy Tail',
   'Disney (Persos)',
   'Disney (Films)',
   'Hercule',
@@ -172,7 +175,7 @@ List<String> plaplaces = [
   'Rues de Paris',
   'Rues de Marseille',
   'Stations Marseille',
-  'Place au hasard',
+  'Lieu au hasard',
 ];
 
 var rplaces = [
@@ -197,6 +200,7 @@ List<List<String>> lilist = [
   nct,
   vd,
   naruto,
+  ft,
   anime,
   countries,
   capitales,
@@ -254,6 +258,7 @@ List<String> liliste = [
   'NCT',
   'Vampire Diaries (Persos)',
   'Naruto',
+  'Fairy Tail',
   'Anime',
   'Pays',
   'Capitales',
@@ -6440,6 +6445,7 @@ List<String> rand = [
   ...nct,
   ...vd,
   ...naruto,
+  ...ft,
   ...countries,
   ...capitales,
   ...disneyHV,
