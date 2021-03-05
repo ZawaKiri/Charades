@@ -11,6 +11,7 @@ import 'package:flutter_app/src/mots.dart';
 import 'package:flutter_app/src/naruto.dart';
 import 'package:flutter_app/src/rues.dart';
 import 'package:flutter_app/src/sexion.dart';
+import 'package:flutter_app/src/theBeatles.dart';
 import 'package:flutter_app/src/wikihow.dart';
 import 'package:flutter_app/src/michael.dart';
 
@@ -62,6 +63,14 @@ List<List<String>> lyrics = [
   humanNature,
   thriller,
   wii,
+  dontLetMeDown,
+  heyJude,
+  yellowSubmarine,
+  letItBe,
+  loveMeDo,
+  withALittleHelpFromMyFriends,
+  eightWaysToBe,
+  helloGoodbye,
 ];
 
 List<String> lylyrics = [
@@ -92,6 +101,14 @@ List<String> lylyrics = [
   'Human Nature',
   'Thriller',
   'Who Is It',
+  'Don’t Let Me Down',
+  'Hey Jude',
+  'Yellow Submarine',
+  'Let It Be',
+  'Love Me Do',
+  'With a Little Help from My Friends',
+  'Eight Ways to Be',
+  'Hello, Goodbye',
 ];
 
 List<List<String>> music = [
