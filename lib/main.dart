@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'dart:math';
 import 'dart:async';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'lists.dart';
+import 'src/lists.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,7 +38,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
             MediaQuery.of(context).size.height +
         MediaQuery.of(context).size.width * MediaQuery.of(context).size.width);
     return DefaultTabController(
-      length: 6,
+      length: 7,
       child: Scaffold(
           key: _scaffoldKey,
           appBar: AppBar(
@@ -63,6 +63,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
               Tab(
                   child: Text(
                     'Lyrics',
+                    style: TextStyle(fontSize: d / 48, color: Colors.black),
+                  )),
+              Tab(
+                  child: Text(
+                    'MJ',
                     style: TextStyle(fontSize: d / 48, color: Colors.black),
                   )),
 
