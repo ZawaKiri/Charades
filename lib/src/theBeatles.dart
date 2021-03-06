@@ -19,7 +19,6 @@ List<String> dontLetMeDown = [
   'Nobody ever loved me like she does'
 ];
 
-
 List<String> heyJude = [
   "Hey Jude, don't be afraid",
   "Hey Jude, don't make it bad",
@@ -62,7 +61,6 @@ List<String> heyJude = [
   'You have found her, now go and get her'
 ];
 
-
 List<String> yellowSubmarine = [
   'And our friends are all aboard',
   'Aye-aye, sir, aye-aye',
@@ -88,7 +86,6 @@ List<String> yellowSubmarine = [
   'We all live in a yellow submarine'
 ];
 
-
 List<String> letItBe = [
   'And in my hour of darkness, she is standing right in front of me',
   'Oh there will be an answer, let it be',
@@ -106,7 +103,6 @@ List<String> letItBe = [
   'When I find myself in times of trouble, Mother Mary comes to me'
 ];
 
-
 List<String> loveMeDo = [
   'Whoa, oh, love me do',
   'You know I love you',
@@ -120,7 +116,6 @@ List<String> loveMeDo = [
   'Love, love me do',
   'Whoa, love me do'
 ];
-
 
 List<String> withALittleHelpFromMyFriends = [
   "Are you sad because you're on your own?",
@@ -153,58 +148,52 @@ List<String> withALittleHelpFromMyFriends = [
   "And I'll try not to sing out of key"
 ];
 
-
 List<String> eightWaysToBe = [
-  'Eight ways to be in Matthew 5:2 go right there',
-  'Blessed are the thirsty for righteousness and truth',
-  'Blessed are the gentle of meek and lowly form',
-  'And eight is plenty enough, babe',
-  'Eight ways to be, eight ways to be, eight ways to be',
-  "Helps you see my Lord's eight blest Beatitudes",
-  'Eight ways to be in Matthew',
-  "Ohhh, they'll be happy, you'll be happy",
-  'Holy, happy, holy, happy',
-  "Eight ways to be -- that's why they're called Beatitudes",
-  "Blest are those who suffer for righteousness' sake",
-  'You might need to know babe, Chapter 5 Matthew',
-  'Blessed are the humble, blest are those who mourn',
-  'Blest are the pure of heart and those who peace to make',
-  "They'll be happy, you'll be happy",
-  "There's eight God wants us to know, babe, eight ways to be",
-  "Blest are those with mercy -- they'll get Christ's mercy too",
-  "There's eight God wants ya to know, babe, eight ways to be",
-  'Parody of "8 Days A Week" by The Beatles'
+  'Eight days a week',
+  "I ain't got nothing but love, girl",
+  'Ooh, I need your love, babe',
+  'Love you all the time',
+  "I ain't got nothing but love, babe",
+  'Ooh I need your love, babe',
+  'Always on my mind',
+  'One thing I can say girl',
+  'Is not enough to show I care',
+  'Hope you need my love, babe',
+  'Love you everyday, girl',
+  'I love you',
+  'Hold me, love me',
+  'One thing I can say, girl',
+  "Guess you know it's true",
+  'Just like I need you',
 ];
 
-
 List<String> helloGoodbye = [
-      "(Hello, goodbye) I don't know why you say goodbye, I say hello",
-      'You say yes (I say yes)',
-      'Hela, heba helloa, woo-hoo!',
-      'You say goodbye and I say hello',
-      'I say high, you say low',
-      'Oh no',
-      "I don't know why you say goodbye, I say hello",
-      'Hello, hello',
-      'I say no (But I may mean no)',
-      'You say stop and I say go go go, oh no',
-      "You say why and I say I don't know, oh no",
-      'You say stop (I can stay)',
-      "And I say go go go (Till it's time to go)",
-      'Why why why why why why do you say goodbye?',
-      'Hela, heba helloa, cha cha cha',
-      '(Hello, goodbye, hello, goodbye) Hello, hello',
-      'Hello',
-      "I don't know why you say goodbye, I say hello, oh, oh",
-      'You say yes, I say no',
-      'Hela, heba helloa',
-      'Hela, heba helloa, hela!',
-      '(Hello, goodbye)',
-      'Hela, heba helloa, woo!',
-      'Oh, oh no',
-      'Goodbye, bye bye bye bye'
-    ];
-
+  "(Hello, goodbye) I don't know why you say goodbye, I say hello",
+  'You say yes (I say yes)',
+  'Hela, heba helloa, woo-hoo!',
+  'You say goodbye and I say hello',
+  'I say high, you say low',
+  'Oh no',
+  "I don't know why you say goodbye, I say hello",
+  'Hello, hello',
+  'I say no (But I may mean no)',
+  'You say stop and I say go go go, oh no',
+  "You say why and I say I don't know, oh no",
+  'You say stop (I can stay)',
+  "And I say go go go (Till it's time to go)",
+  'Why why why why why why do you say goodbye?',
+  'Hela, heba helloa, cha cha cha',
+  '(Hello, goodbye, hello, goodbye) Hello, hello',
+  'Hello',
+  "I don't know why you say goodbye, I say hello, oh, oh",
+  'You say yes, I say no',
+  'Hela, heba helloa',
+  'Hela, heba helloa, hela!',
+  '(Hello, goodbye)',
+  'Hela, heba helloa, woo!',
+  'Oh, oh no',
+  'Goodbye, bye bye bye bye'
+];
 
 List<String> theBeatles = [
   'Don’t Let Me Down',
@@ -213,7 +202,7 @@ List<String> theBeatles = [
   'Let It Be',
   'Love Me Do',
   'With a Little Help from My Friends',
-  'Eight Ways to Be',
+  'Eight Ways A Week',
   'Hello, Goodbye',
 ];
 

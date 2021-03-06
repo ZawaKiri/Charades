@@ -337,6 +337,7 @@ List<String> liliste = [
   'Science',
   'Stations de métro',
   'Bande Organisée',
+  'Logobitombo',
   'Nous ça va hamdou',
   'Désolé',
   'Ma direction',
