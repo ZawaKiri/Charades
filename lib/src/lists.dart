@@ -315,7 +315,7 @@ List<String> liliste = [
   'Fairy Tail',
   'Sword Art Online',
   'Anime',
-  'Pokemon (1st gen)',
+  'Pokemon (1st gen + leg)',
   'Pokemon',
   'Pays',
   'Capitales',
