@@ -202,7 +202,7 @@ List<String> theBeatles = [
   'Let It Be',
   'Love Me Do',
   'With a Little Help from My Friends',
-  'Eight Ways A Week',
+  'Eight Days A Week',
   'Hello, Goodbye',
 ];
 

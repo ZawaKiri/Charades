@@ -1,4 +1,5 @@
 import 'package:english_words/english_words.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_app/src/anime.dart';
 import 'package:flutter_app/src/classic_rock.dart';
 import 'package:flutter_app/src/colonel.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_app/src/logo.dart';
 import 'package:flutter_app/src/marseille.dart';
 import 'package:flutter_app/src/mots.dart';
 import 'package:flutter_app/src/naruto.dart';
+import 'package:flutter_app/src/pokemon.dart';
 import 'package:flutter_app/src/rues.dart';
 import 'package:flutter_app/src/sexion.dart';
 import 'package:flutter_app/src/theBeatles.dart';
@@ -107,7 +109,7 @@ List<String> lylyrics = [
   'Let It Be',
   'Love Me Do',
   'With a Little Help from My Friends',
-  'Eight Ways to Be',
+  'Eight Days A Week',
   'Hello, Goodbye',
 ];
 
@@ -251,6 +253,8 @@ List<List<String>> lilist = [
   ft,
   sao,
   anime,
+  poke,
+  pokemon,
   countries,
   capitales,
   disneyHV,
@@ -311,6 +315,8 @@ List<String> liliste = [
   'Fairy Tail',
   'Sword Art Online',
   'Anime',
+  'Pokemon (1st gen)',
+  'Pokemon',
   'Pays',
   'Capitales',
   'Disney (Persos)',
@@ -6786,6 +6792,8 @@ List<String> rand = [
   ...naruto,
   ...ft,
   ...sao,
+  ...anime,
+  ...pokemon,
   ...countries,
   ...capitales,
   ...disneyHV,
